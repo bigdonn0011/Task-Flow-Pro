@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@theme {
+  --color-background: var(--background);
+  --color-case: var(--case);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-text: var(--text);
+}
+:root {
+  --background: var(--color-slate-100);
+  --case: var(--color-indigo-500);
+  --border: var(--color-pink-900);
+  --card: var(--color-white);
+  --text: var(--color-slate-950);
+  *,
+  ::before,
+  ::after {
+    transition:
+      color 0.5s ease-in-out,
+      background-color 0.5s ease-in-out,
+      border-color 0.5s ease-in-out;
+  }
+}
+
+.dark {
+  --background: var(--color-slate-800);
+  --case: var(--color-indigo-500);
+  --border: var(--color-pink-900);
+  --card: var(--color-slate-900);
+  --text: var(--color-white);
+}
+.green {
+  --background: var(--color-green-100);
+  --case: var(--color-indigo-500);
+  --border: var(--color-pink-900);
+  --card: var(--color-green-400);
+  --text: var(--color-slate-950);
+}
+.pink {
+  --background: var(--color-pink-100);
+  --case: var(--color-pink-300);
+  --border: var(--color-pink-900);
+  --card: var(--color-pink-400);
+  --text: var(--color-slate-950);
+}
