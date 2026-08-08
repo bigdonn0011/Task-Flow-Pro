@@ -69,7 +69,7 @@ export const Form = () => {
                     <span>
                       {new Date(Number(task.id)).toLocaleTimeString()}
                     </span>
-                    <div classname="flex justify-center items-center"></div>
+                    <div className="flex justify-center items-center"></div>
                   </li>
                 );
               })}
