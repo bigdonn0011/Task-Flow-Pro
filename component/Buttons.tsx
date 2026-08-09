@@ -1,6 +1,7 @@
+interface ButtonStyle {}
 export const Buttons = ({
   className = "",
-  onClick = undefined,
+  onClick = "",
   text = "",
   type = "button",
 }) => {

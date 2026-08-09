@@ -55,8 +55,8 @@ function App() {
         />
         <Buttons
           className=" border-border"
-          onClick={() => setTheme("dark")}
-          text="dark"
+          onClick={() => setTheme("light")}
+          text="light"
         />
       </section>
     </>

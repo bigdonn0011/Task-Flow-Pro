@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Buttons } from "../component/Buttons";
+interface TaskStyle {
+  text: string;
+  id: number;
+  done: boolean;
+} //variable declaration
 export const Form = () => {
-  interface TaskStyle {
-    text: string;
-    id: number;
-    done: boolean;
-  } //variable declaration
-
   const [task, setTask] = useState<TaskStyle[]>([]);
   const [taskInput, setTaskInput] = useState("");
   //Section for adding task
-  const addTask = (e) => {
+  const addTask = (e: ReactFormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (taskInput.trim()) {
       const newTask = {
@@ -24,9 +23,6 @@ export const Form = () => {
       window.alert("Add a task to begin");
     }
   };
-  //Time declaration
-
-  const time = task.id ? new Date(Number(task.id)).toLocaleTimeString() : "N/A";
 
   //task function
   const clearAll = () => {
