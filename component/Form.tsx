@@ -9,7 +9,7 @@ export const Form = () => {
   const [task, setTask] = useState<TaskStyle[]>([]);
   const [taskInput, setTaskInput] = useState("");
   //Section for adding task
-  const addTask = (e: ReactFormEvent<HTMLFormElement>) => {
+  const addTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (taskInput.trim()) {
       const newTask = {
