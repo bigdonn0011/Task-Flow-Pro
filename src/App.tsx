@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Buttons } from "../component/Buttons";
 import { Form } from "../component/Form";
@@ -35,31 +35,29 @@ function App() {
   }, [theme]);
 
   return (
-    <>
-      <section className="container min-h-screen min-w-screen bg-background flex flex-col items-center justify-center">
-        <Form />
-        <Buttons
-          className=" border-border"
-          onClick={() => setTheme("dark")}
-          text="dark"
-        />
-        <Buttons
-          className=" border-border"
-          onClick={() => setTheme("green")}
-          text="green"
-        />
-        <Buttons
-          className=" border-border"
-          onClick={() => setTheme("pink")}
-          text="pink"
-        />
-        <Buttons
-          className=" border-border"
-          onClick={() => setTheme("light")}
-          text="light"
-        />
-      </section>
-    </>
+    <section className="container min-w-screen bg-background flex flex-col items-center justify-center">
+      <Form />
+      <Buttons
+        className=" border-border"
+        onClick={() => setTheme("dark")}
+        text="dark"
+      />
+      <Buttons
+        className=" border-border"
+        onClick={() => setTheme("green")}
+        text="green"
+      />
+      <Buttons
+        className=" border-border"
+        onClick={() => setTheme("pink")}
+        text="pink"
+      />
+      <Buttons
+        className=" border-border"
+        onClick={() => setTheme("light")}
+        text="light"
+      />
+    </section>
   );
 }
 export default App;

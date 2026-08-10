@@ -35,22 +35,21 @@ export const Form = () => {
     <>
       <form
         action=""
-        className="min-h-fit p-4 max-w-3xl bg-background flex flex-1 flex-col gap-4 justify-center items-center"
+        className=" container min-h-fit p-4 max-w-3xl bg-background flex flex-1 flex-col gap-4 justify-center items-center"
         onSubmit={addTask}
       >
-        <section className="w-full min-h-fit bg-case border border-border flex flex-1 flex-col p-2 justify-start items-center">
-          <div className="gap-2 flex justify-between p-2 items-center w-full">
+        <section className="w-full min-h-fit bg-case border-2 border-border flex flex-1 flex-col p-2 justify-start items-center">
+          <div className="input-Div gap-2 flex justify-between p-2 items-center w-full">
             <input
-              className=" flex-1 p-2 bg-card/50 outline-card rounded-md ring-2 ring-card"
+              className="text-text flex-1 p-2 bg-card/50 outline-border/50 rounded-md ring-2 ring-border"
               type="text"
               placeholder="Add a new task.."
               value={taskInput}
               onChange={(e) => setTaskInput(e.target.value)}
               autoFocus
             />
-            <button className="shrink-0 bg-card text-text border border-border rounded-md shadow-md p-4 py-2 active:scale-95 active:ring-4 hover:bg-card/80 hover:scale-105 transition-all duration-500">
-              Submit
-            </button>
+
+            <Buttons type="submit" text="Add Task" />
           </div>
           <div className="w-full p-4 bg-background">
             <ul className="flex flex-col justify-center items-center gap-4">
@@ -58,14 +57,15 @@ export const Form = () => {
                 return (
                   <li
                     key={task.id}
-                    className="mt-2 bg-card rounded-md p-4 w-full flex justify-between border border-border 
+                    className=" text-text border border-border bg-card rounded-lg p-3 w-full flex justify-between items-start
                     "
                   >
-                    <span> {task.text}</span>
-                    <span>
+                    <span className="break-words flex-1 min-w-0">
+                      {task.text}
+                    </span>
+                    <span className="whitespace-no-wrap text-right shrink-0">
                       {new Date(Number(task.id)).toLocaleTimeString()}
                     </span>
-                    <div className="flex justify-center items-center"></div>
                   </li>
                 );
               })}
@@ -73,6 +73,7 @@ export const Form = () => {
             {task.length > 0 && (
               <div className="p-4 w-full bg-background">
                 <Buttons
+                  className="w-full"
                   onClick={clearAll}
                   text="Clear all tasks
                   "

@@ -9,7 +9,7 @@
 :root {
   --background: var(--color-slate-100);
   --case: var(--color-grey-500);
-  --border: var(--color-silver-900);
+  --border: var(--color-slate-700);
   --card: var(--color-white);
   --text: var(--color-slate-950);
   *,
@@ -25,16 +25,16 @@
 .dark {
   --background: var(--color-slate-800);
   --case: var(--color-slate-300);
-  --border: var(--color-grey-900);
+  --border: var(--color-slate-700);
   --card: var(--color-slate-900);
   --text: var(--color-white);
 }
 .green {
-  --background: var(--color-green-100);
-  --case: var(--color-emrald-500);
-  --border: var(--color-teal-900);
-  --card: var(--color-green-400);
-  --text: var(--color-slate-950);
+  --background: var(--color-emerald-100);
+  --case: var(--color-green-200);
+  --border: var(--color-slate-700);
+  --card: var(--color-emerald-400);
+  --text: var(--color-black);
 }
 .pink {
   --background: var(--color-pink-100);
