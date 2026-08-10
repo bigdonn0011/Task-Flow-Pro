@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { Buttons } from "../component/Buttons";
 import { Form } from "../component/Form";
 import { Themes } from "../component/Themes";
 

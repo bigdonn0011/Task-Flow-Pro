@@ -1,11 +1,15 @@
-import { useState, React } from "react";
+import React from "react";
+import { useState } from "react";
 import { Buttons } from "../component/Buttons";
 interface TaskStyle {
   text: string;
   id: number;
   done: boolean;
-} //variable declaration
-export const Form = ({ openThemeModal }: () => void) => {
+};
+interface FormStyle{
+  openThemeModal:()=>void
+}//variable declaration
+export const Form = ({ openThemeModal }: FormStyle) => {
   const [task, setTask] = useState<TaskStyle[]>([]);
   const [taskInput, setTaskInput] = useState("");
   //Section for adding task

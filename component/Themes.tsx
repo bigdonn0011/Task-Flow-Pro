@@ -1,6 +1,10 @@
 import { Buttons } from "../component/Buttons";
-
-export const Themes = ({ openTheme, setTheme }) => {
+import type { Theme } from "../src/App";
+interface ThemeStyle {
+  openTheme: boolean;
+  setTheme: (theme: Theme) => void;
+}
+export const Themes = ({ openTheme, setTheme }: ThemeStyle) => {
   return (
     <>
       {openTheme && (
