@@ -1,5 +1,5 @@
 import {Buttons} from "../component/Buttons"
-export const Themes = ()=>{
+export const Theme = ()=>{
   return (
     <>
       <div className="flex flex-col gap-4 justify-center items-center p-4 bg-background text-text">

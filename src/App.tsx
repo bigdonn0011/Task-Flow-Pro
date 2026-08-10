@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 
 import { Buttons } from "../component/Buttons";
 import { Form } from "../component/Form";
+import { Themes } from "../component/Themes";
 
-type Theme = "light" | "pink" | "dark" | "green";
+export type Theme = "light" | "pink" | "dark" | "green";
 
 //saves to local storage for theme
 function App() {
+  const [openTheme, setOpenTheme] = useState(false);
+  const openThemeModal = () => setOpenTheme((prev) => !prev);
+
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("theme") as Theme;
@@ -35,29 +39,12 @@ function App() {
   }, [theme]);
 
   return (
-    <section className="container min-h-screen min-w-screen bg-background flex flex-col items-center justify-center">
-      <Form />
-      <Buttons
-        className=" border-border"
-        onClick={() => setTheme("dark")}
-        text="dark"
-      />
-      <Buttons
-        className=" border-border"
-        onClick={() => setTheme("green")}
-        text="green"
-      />
-      <Buttons
-        className=" border-border"
-        onClick={() => setTheme("pink")}
-        text="pink"
-      />
-      <Buttons
-        className=" border-border"
-        onClick={() => setTheme("light")}
-        text="light"
-      />
-    </section>
+    <>
+      <section className="container min-h-screen min-w-screen bg-background flex flex-col gap-2 items-center justify-center">
+        <Form openThemeModal={openThemeModal} />
+        <Themes openTheme={openTheme} setTheme={setTheme} />
+      </section>
+    </>
   );
 }
 export default App;
