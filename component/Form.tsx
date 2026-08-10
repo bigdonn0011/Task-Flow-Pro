@@ -41,7 +41,7 @@ export const Form = () => {
         <section className="w-full min-h-fit bg-case border-2 border-border flex flex-1 flex-col p-2 justify-start items-center">
           <div className="input-Div gap-2 flex justify-between p-2 items-center w-full">
             <input
-              className="text-text flex-1 p-2 bg-card/50 outline-border/50 rounded-md ring-2 ring-border"
+              className="text-text flex-1 min-w-0 p-2 bg-card/50 outline-border/50 rounded-md ring-2 ring-border"
               type="text"
               placeholder="Add a new task.."
               value={taskInput}
@@ -49,7 +49,7 @@ export const Form = () => {
               autoFocus
             />
 
-            <Buttons type="submit" text="Add Task" />
+            <Buttons type="submit" className="shrink-0" text="Add Task" />
           </div>
           <div className="w-full p-4 bg-background">
             <ul className="flex flex-col justify-center items-center gap-4">
