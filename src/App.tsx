@@ -35,7 +35,7 @@ function App() {
   }, [theme]);
 
   return (
-    <section className="container min-h-[100vh] min-w-screen bg-background flex flex-col items-center justify-center">
+    <section className="container min-h-screen min-w-screen bg-background flex flex-col items-center justify-center">
       <Form />
       <Buttons
         className=" border-border"
