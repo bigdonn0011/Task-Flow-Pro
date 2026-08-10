@@ -34,10 +34,10 @@ export const Form = () => {
   return (
     <>
       <form
-        action=""
         className=" container min-h-fit p-4 max-w-3xl bg-background flex flex-1 flex-col gap-4 justify-center items-center"
         onSubmit={addTask}
-      >
+        
+      ><div className="items-start">
         <section className="w-full min-h-fit bg-case border-2 border-border flex flex-1 flex-col p-2 justify-start items-center">
           <div className="input-Div gap-2 flex justify-between p-2 items-center w-full">
             <input
