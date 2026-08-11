@@ -10,6 +10,7 @@ interface FormStyle {
   openThemeModal: () => void;
 } //variable declaration
 export const Form = ({ openThemeModal }: FormStyle) => {
+  const listItems = [];
   const [task, setTask] = useState<TaskStyle[]>([]);
   const [taskInput, setTaskInput] = useState("");
   //Section for adding task
@@ -53,7 +54,7 @@ export const Form = ({ openThemeModal }: FormStyle) => {
             </div>
             <div
               className="
-              px-4 py-1 !font-bold text-text !text-center"
+              px-4 py-1 !font-bold !text-4xl !text-center"
             >
               <span>Task Flow Pro</span>
             </div>
@@ -72,6 +73,16 @@ export const Form = ({ openThemeModal }: FormStyle) => {
           </div>
           <div className="w-full p-4 bg-background/80">
             <ul className="flex flex-col justify-center items-center gap-4">
+              {task.length === 0 && (
+                <div className="flex flex-col justify-center items-center gap-4 p-4 w-full text-center text-text font-black">
+                  <p className="block p-4 text-medium text-xl">
+                    Looks empty in here
+                  </p>
+                  <p className="block p-4 text-medium text-xl">
+                    Add a task to begin
+                  </p>
+                </div>
+              )}
               {task.map((task) => {
                 return (
                   <li
@@ -91,7 +102,7 @@ export const Form = ({ openThemeModal }: FormStyle) => {
             </ul>
             {task.length > 0 && (
               <div
-                className="p-4 w-full bg-cardjb=n
+                className="p-4 
                 "
               >
                 <Buttons
