@@ -41,7 +41,11 @@ function App() {
     <>
       <section className="container min-h-screen min-w-screen bg-background flex flex-col gap-2 items-center justify-center">
         <Form openThemeModal={openThemeModal} />
-        <Themes openTheme={openTheme} setTheme={setTheme} />
+        <Themes
+          openThemeModal={openThemeModal}
+          openTheme={openTheme}
+          setTheme={setTheme}
+        />
       </section>
     </>
   );

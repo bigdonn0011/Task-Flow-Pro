@@ -5,10 +5,10 @@ interface TaskStyle {
   text: string;
   id: number;
   done: boolean;
-};
-interface FormStyle{
-  openThemeModal:()=>void
-}//variable declaration
+}
+interface FormStyle {
+  openThemeModal: () => void;
+} //variable declaration
 export const Form = ({ openThemeModal }: FormStyle) => {
   const [task, setTask] = useState<TaskStyle[]>([]);
   const [taskInput, setTaskInput] = useState("");
