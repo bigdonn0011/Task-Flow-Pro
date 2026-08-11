@@ -22,28 +22,28 @@ export const Themes = ({ openTheme, setTheme, openThemeModal }: ThemeStyle) => {
           </div>
           <ul className="max-w-2xl flex flex-col gap-4 rounded-md w-full p-4 justify-start ">
             <li
-              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium text-medium border-none
+              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium text-medium bg-slate-700 border-2 border-slate-200
                btt     "
               onClick={() => setTheme("dark")}
             >
               Ace Dark
             </li>
             <li
-              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium text-medium border-none
+              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium text-medium bg-pink-100 border-2 border-pink-400
                    btt "
               onClick={() => setTheme("pink")}
             >
               Prevalent Pink
             </li>
             <li
-              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium text-medium border-none
+              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium text-medium bg-slate-100  border-2 border-slate-700
                   btt  "
               onClick={() => setTheme("light")}
             >
               Lustrous White
             </li>
             <li
-              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium text-medium border-none
+              className=" text-text bg-card rounded-lg p-3 w-full flex justify-center items-center font-medium bg-green-100 text-medium  border-2 border-green-300
                   btt  "
               onClick={() => setTheme("green")}
             >
