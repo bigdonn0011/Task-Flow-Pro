@@ -45,7 +45,7 @@ export const Form = ({ openThemeModal }: FormStyle) => {
           <section className=" relative items-center w-full cursor-pointer justify-center p-2 flex">
             <div className="items-center w-full p-2 flex absolute left-4">
               <span
-                className="  select-none !text-4xl text-text material-symbols-rounded"
+                className="  select-none !text-4xl material-symbols-rounded"
                 onClick={openThemeModal}
               >
                 menu
