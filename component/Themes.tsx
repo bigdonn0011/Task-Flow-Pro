@@ -10,7 +10,7 @@ export const Themes = ({ openTheme, setTheme, openThemeModal }: ThemeStyle) => {
     <>
       {openTheme && (
         <div className="inset-0 backdrop-blur-md z-10 flex flex-col justify-center items-center p-4 min-h-screen min-w-screen">
-          <Buttons text="close" onClick={openThemeModal} />
+          <Buttons text="Close" onClick={openThemeModal} />
           <div className="flex flex-col gap-2 rounded-md border border-border bg-case w-full">
             <Buttons
               className="border-border"
