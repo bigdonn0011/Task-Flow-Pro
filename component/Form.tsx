@@ -10,7 +10,6 @@ interface FormStyle {
   openThemeModal: () => void;
 } //variable declaration
 export const Form = ({ openThemeModal }: FormStyle) => {
-  const listItems = [];
   const [task, setTask] = useState<TaskStyle[]>([]);
   const [taskInput, setTaskInput] = useState("");
   //Section for adding task

@@ -1,4 +1,3 @@
-import { Buttons } from "../component/Buttons";
 import type { Theme } from "../src/App";
 interface ThemeStyle {
   openTheme: boolean;
