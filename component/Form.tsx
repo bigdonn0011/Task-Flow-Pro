@@ -53,7 +53,7 @@ export const Form = ({ openThemeModal }: FormStyle) => {
             </div>
             <div
               className="
-              px-4 py-1 !font-bold !text-4xl !text-center"
+              px-4 py-1 !font-bold !text-3xl !text-center"
             >
               <span>Task Flow Pro</span>
             </div>
