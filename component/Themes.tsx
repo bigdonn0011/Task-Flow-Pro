@@ -10,7 +10,6 @@ interface ThemeStyle {
 }
 export const Themes = ({
   openTheme,
-  setTheme,
   openThemeModal,
   setting,
   settingModal,
