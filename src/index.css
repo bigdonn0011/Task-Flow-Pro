@@ -5,6 +5,7 @@
   --color-border: var(--border);
   --color-card: var(--card);
   --color-text: var(--text);
+  --color-themeText: var(--themeText);
 }
 :root {
   --background: var(--color-slate-100);
@@ -28,6 +29,7 @@
   --border: var(--color-slate-700);
   --card: var(--color-slate-900);
   --text: var(--color-white);
+  --themeText: var(--color-slate-800);
 }
 .green {
   --background: var(--color-emerald-100);

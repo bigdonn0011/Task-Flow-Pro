@@ -9,7 +9,8 @@ export type Theme = "light" | "pink" | "dark" | "green";
 function App() {
   const [openTheme, setOpenTheme] = useState(false);
   const openThemeModal = () => setOpenTheme((prev) => !prev);
-
+  const [setting, setSetting] = useState(false);
+  const settingModal = () => setSetting((prev) => !prev);
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("theme") as Theme;
@@ -45,6 +46,8 @@ function App() {
           openThemeModal={openThemeModal}
           openTheme={openTheme}
           setTheme={setTheme}
+          setting={setting}
+          settingModal={settingModal}
         />
       </section>
     </>
