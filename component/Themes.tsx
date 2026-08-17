@@ -17,14 +17,12 @@ export const Themes = ({
 }: ThemeStyle) => {
   return (
     <>
-      {openTheme && (
-        <div className="inset-0 fixed backdrop-blur-md z-10 flex flex-col justify-center items-center p-4 h-screen w-screen gap-4">
-          {!setting && (
-            <div
-              className={`w-full relative flex justify-start items-center ${setting ? "hidden" : ""}`}
-            >
+      {!setting ? (
+        <section className="inset-0 fixed backdrop-blur-md z-10 flex flex-col justify-center items-center p-4 h-screen w-screen gap-4">
+          <div className="w-full max-w-2xl relative flex flex-col justify-start items-center gap-4">
+            <div className="w-full relative flex justify-start items-center">
               <Buttons
-                className="block p-4 items-center !text-3xl font-black  absolute left-4  border-none material-symbols-rounded"
+                className="material-symbols-rounded"
                 onClick={openThemeModal}
                 text="close"
               />
@@ -33,36 +31,34 @@ export const Themes = ({
                 Menu
               </span>
             </div>
-          )}
-
-          <section
-            className={` text-bold ${setting ? "hidden" : ""}`}
-            onClick={settingModal}
-          >
-            <span className=" w-full px-4 py-1 block font-bold !text-2xl text-center">
-              Select Theme
-            </span>
-          </section>
-          {setting && (
-            <div className="  w-full relative flex justify-start items-center ">
-              <Buttons
-                className="block p-4 items-center !text-3xl font-black  absolute left-4  border-none material-symbols-rounded bg-red-500"
-                onClick={settingModal}
-                text="Menu"
-              />
+            <section onClick={settingModal}>
               <span className=" w-full px-4 py-1 block font-bold !text-2xl text-center">
-                Choose Theme
+                Select Theme
               </span>
-              <ul className="max-w-2xl flex flex-col gap-4 rounded-md w-full p-4 justify-start ">
-                <Li text="Ace Dark" onClick={() => setTheme("dark")} />
-                <Li text="pink" onClick={() => setTheme("pink")} />
-                <Li text="Green" onClick={() => setTheme("green")} />
-                <Li text="white" onClick={() => setTheme("light")} />
-              </ul>
-            </div>
-          )}
+            </section>
+          </div>{" "}
+        </section>
+      ) : (
+        <div className="w-full max-w-2xl relative flex flex-col justify-start items-center gap-4">
+          <div className="  w-full relative flex justify-start items-center ">
+            <Buttons
+              className="material-symbols-rounded"
+              onClick={settingModal}
+              text="arrow_back"
+            />
+            <span className=" w-full px-4 py-1 block font-bold !text-2xl text-center">
+              Choose Theme
+            </span>
+          </div>
+          <ul className="max-w-2xl flex flex-col gap-4 rounded-md w-full p-4 justify-start ">
+            <Li text="Ace Dark" onClick={() => setTheme("dark")} />
+            <Li text="pink" onClick={() => setTheme("pink")} />
+            <Li text="Green" onClick={() => setTheme("green")} />
+            <Li text="white" onClick={() => setTheme("light")} />
+          </ul>
         </div>
       )}
+      )
     </>
   );
 };
