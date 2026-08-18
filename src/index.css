@@ -29,7 +29,7 @@
   --border: var(--color-slate-700);
   --card: var(--color-slate-900);
   --text: var(--color-white);
-  --themeText: var(--color-slate-800);
+  --themeText: var(--color-slate-100);
 }
 .green {
   --background: var(--color-emerald-100);

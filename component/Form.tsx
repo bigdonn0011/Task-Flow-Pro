@@ -95,6 +95,17 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                     <span className="whitespace-no-wrap text-right shrink-0">
                       {new Date(Number(task.id)).toLocaleTimeString()}
                     </span>
+
+                    <div className=" text-text bg-card flex justify-between items-start">
+                      <Buttons
+                        className="material-symbols-rounded p-0"
+                        text="delete"
+                      />
+                      <Buttons
+                        className="material-symbols-rounded p-0"
+                        text="done"
+                      />
+                    </div>
                   </li>
                 );
               })}

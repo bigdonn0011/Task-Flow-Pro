@@ -33,8 +33,15 @@ export const Themes = ({
                   </span>
                 </div>
 
-                <Li onClick={settingModal} text="Theme" />
-                <Li onClick={settingModal} text="Theme" />
+                <Li
+                  onClick={settingModal}
+                  className="bg-transparent"
+                  text="Theme"
+                />
+
+                <Li className="bg-transparent" text="Login" />
+
+                <Li className="bg-transparent" text="Change Avatar" />
               </div>
             </section>
           )
