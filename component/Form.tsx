@@ -58,6 +58,22 @@ export const Form = ({ openThemeModal }: FormStyle) => {
               <span>Task Flow Pro</span>
             </div>
           </section>
+          <section className=" relative items-center w-full cursor-pointer justify-center p-2 flex">
+            <div className=" Avatar-setting bg-card items-center w-full p-2 flex absolute left-4">
+              <span
+                className="  select-none !text-4xl material-symbols-rounded"
+                onClick={open Avatar}
+              >
+                menu
+              </span>
+            </div>
+            <div
+              className="
+              px-4 py-1 !font-bold !text-3xl !text-center"
+            >
+              <span>{UserName}</span>
+            </div>
+          </section>
           <div className="input-Div gap-2 flex justify-between p-2 items-center w-full">
             <input
               className="text-text flex-1 min-w-0 p-2 bg-card/50 outline-border/50 rounded-md ring-2 ring-border"
@@ -89,14 +105,15 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                     className=" text-text border border-border bg-card rounded-lg p-3 w-full flex justify-between items-start
                     "
                   >
-                    <span className="break-words flex-1 min-w-0">
-                      {task.text}
-                    </span>
-                    <span className="whitespace-no-wrap text-right shrink-0">
-                      {new Date(Number(task.id)).toLocaleTimeString()}
-                    </span>
-
-                    <span className=" text-text bg-card flex justify-between items-start">
+                    <section className="block text-text bg-card flex justify-between gap-2 items-center">
+                      <span className="break-words flex-1 min-w-0">
+                        {task.text}
+                      </span>
+                      <span className="whitespace-nowrap text-center shrink-0">
+                        {new Date(Number(task.id)).toLocaleTimeString()}
+                      </span>
+                    </section>
+                    <span className=" block text-text bg-card flex justify-centerThank you very muchThank you very muchffff items-center">
                       <Buttons
                         className="material-symbols-rounded p-0 shadow-none"
                         text="delete"

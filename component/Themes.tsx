@@ -59,10 +59,10 @@ export const Themes = ({
                   </span>
                 </div>
                 <ul className="max-w-2xl flex flex-col gap-4 rounded-md w-full p-4 justify-start ">
-                  <Li text="Ace Dark" onClick={() => setTheme("dark")} />
-                  <Li text="pink" onClick={() => setTheme("pink")} />
-                  <Li text="Green" onClick={() => setTheme("green")} />
-                  <Li text="white" onClick={() => setTheme("light")} />
+                  <Li text="Domino Dark" onClick={() => setTheme("dark")} />
+                  <Li text="Penchant Pink" onClick={() => setTheme("pink")} />
+                  <Li text="Glorific Green" onClick={() => setTheme("green")} />
+                  <Li text="Wispful White" onClick={() => setTheme("light")} />
                 </ul>
               </div>
             </section>
