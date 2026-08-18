@@ -96,16 +96,16 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                       {new Date(Number(task.id)).toLocaleTimeString()}
                     </span>
 
-                    <div className=" text-text bg-card flex justify-between items-start">
+                    <span className=" text-text bg-card flex justify-between items-start">
                       <Buttons
-                        className="material-symbols-rounded p-0"
+                        className="material-symbols-rounded p-0 shadow-none"
                         text="delete"
                       />
                       <Buttons
-                        className="material-symbols-rounded p-0"
+                        className="material-symbols-rounded p-0 shadow-none"
                         text="done"
                       />
-                    </div>
+                    </span>
                   </li>
                 );
               })}
