@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Buttons } from "../component/Buttons";
+import { Avatar } from "../component/Avatar";
 interface TaskStyle {
   text: string;
   id: number;
@@ -58,22 +59,8 @@ export const Form = ({ openThemeModal }: FormStyle) => {
               <span>Task Flow Pro</span>
             </div>
           </section>
-          <section className=" relative items-center w-full cursor-pointer justify-center p-2 flex">
-            <div className=" Avatar-setting bg-card items-center w-full p-2 flex absolute left-4">
-              <span
-                className="  select-none !text-4xl material-symbols-rounded"
-                onClick={open Avatar}
-              >
-                menu
-              </span>
-            </div>
-            <div
-              className="
-              px-4 py-1 !font-bold !text-3xl !text-center"
-            >
-              <span>{UserName}</span>
-            </div>
-          </section>
+          <Avatar />
+
           <div className="input-Div gap-2 flex justify-between p-2 items-center w-full">
             <input
               className="text-text flex-1 min-w-0 p-2 bg-card/50 outline-border/50 rounded-md ring-2 ring-border"
@@ -89,7 +76,7 @@ export const Form = ({ openThemeModal }: FormStyle) => {
           <div className="w-full p-4 bg-background/80">
             <ul className="flex flex-col justify-center items-center gap-4">
               {task.length === 0 && (
-                <div className="flex flex-col justify-center items-center gap-4 p-4 w-full text-center text-text font-black">
+                <div className="flex flex-col justify-center items-center gap-2 p-4 w-full text-center text-text font-black">
                   <p className="block p-4 text-medium text-xl">
                     Looks empty in here
                   </p>
@@ -113,7 +100,7 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                         {new Date(Number(task.id)).toLocaleTimeString()}
                       </span>
                     </section>
-                    <span className=" block text-text bg-card flex justify-centerThank you very muchThank you very muchffff items-center">
+                    <span className=" block text-text bg-card flex justify-center items-center">
                       <Buttons
                         className="material-symbols-rounded p-0 shadow-none"
                         text="delete"
