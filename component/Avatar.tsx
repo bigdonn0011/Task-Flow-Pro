@@ -18,7 +18,7 @@ export const Avatar = () => {
     <>
       <section
         onClick={user}
-        className="items-center w-full cursor-pointer justify-center p-2 flex"
+        className="items-center w-full cursor-pointer justify-center p-2 flex text-text"
       >
         <div className=" Avatar-setting bg-card items-center p-2 flex">
           <span

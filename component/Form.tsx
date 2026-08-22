@@ -28,7 +28,15 @@ export const Form = ({ openThemeModal }: FormStyle) => {
       window.alert("Add a task to begin");
     }
   };
-
+  //delete function
+  const deleteTask = (idToDelete: number) => {
+    let prompt = window.confirm("Delete this task permanently ?");
+    if (prompt) {
+      setTask(task.filter((item) => item.id !== idToDelete));
+    }
+  };
+  //checktask
+  const checktask = 
   //task function
   const clearAll = () => {
     const prompt = window.confirm("Clear All Tasks?");
@@ -104,8 +112,14 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                       <Buttons
                         className="material-symbols-rounded p-0 shadow-none"
                         text="delete"
+                        onClick={() => {
+                          deleteTask(task.id);
+                        }}
                       />
                       <Buttons
+                        onClick={() => {
+                          checktask(task.id);
+                        }}
                         className="material-symbols-rounded p-0 shadow-none"
                         text="done"
                       />
