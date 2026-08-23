@@ -97,30 +97,27 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                 return (
                   <li
                     key={task.id}
-                    className=" text-text border border-border bg-card rounded-lg p-3 w-full flex justify-between items-start
+                    className=" text-text border border-border bg-card rounded-lg p-4 gap-2 space-2 w-full flex justify-center items-start
                     "
                   >
-                    <section className="block text-text bg-card flex justify-between gap-2 items-center">
-                      <span className="break-words flex-1 min-w-0">
-                        {task.text}
-                      </span>
-                      <span className="whitespace-nowrap text-center shrink-0">
-                        {new Date(Number(task.id)).toLocaleTimeString()}
-                      </span>
-                    </section>
-                    <span className=" block text-text bg-card flex justify-center items-center">
-                      <Buttons
-                        className="material-symbols-rounded p-0 shadow-none"
-                        text="delete"
-                        onClick={() => {
-                          deleteTask(task.id);
-                        }}
-                      />
-                      <Buttons
-                        className="material-symbols-rounded p-0 shadow-none"
-                        text="done"
-                      />
-                    </span>
+                    <p className=" break-words flex-1 min-w-0 text-left">
+                      {task.text}
+                    </p>
+                    <p className=" whitespace-nowrap text-right shrink-0 p-4 py-2">
+                      {new Date(Number(task.id)).toLocaleTimeString()}
+                    </p>
+
+                    <Buttons
+                      className="material-symbols-rounded p-0 shadow-none"
+                      text="delete"
+                      onClick={() => {
+                        deleteTask(task.id);
+                      }}
+                    />
+                    <Buttons
+                      className="material-symbols-rounded p-0 shadow-none"
+                      text="done"
+                    />
                   </li>
                 );
               })}
