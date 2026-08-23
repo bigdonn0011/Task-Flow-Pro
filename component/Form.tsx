@@ -36,7 +36,7 @@ export const Form = ({ openThemeModal }: FormStyle) => {
     }
   };
   //checktask
-  const checktask = 
+
   //task function
   const clearAll = () => {
     const prompt = window.confirm("Clear All Tasks?");
@@ -117,9 +117,6 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                         }}
                       />
                       <Buttons
-                        onClick={() => {
-                          checktask(task.id);
-                        }}
                         className="material-symbols-rounded p-0 shadow-none"
                         text="done"
                       />

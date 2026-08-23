@@ -1,7 +1,6 @@
-import React from "react";
 import { useState } from "react";
 export const Avatar = () => {
-  const [openAvatar, setopenAvatar] = useState(false);
+  //const [openAvatar, setopenAvatar] = useState(false);
   const [userName, setUserName] = useState("Guest");
   const user = () => {
     const prompte = window.prompt("Who is logging in today?");
@@ -21,10 +20,7 @@ export const Avatar = () => {
         className="items-center w-full cursor-pointer justify-center p-2 flex text-text"
       >
         <div className=" Avatar-setting bg-card items-center p-2 flex">
-          <span
-            className="select-none !text-4xl material-symbols-rounded"
-            onClick={openAvatar}
-          >
+          <span className="select-none !text-4xl material-symbols-rounded">
             menu
           </span>
         </div>
