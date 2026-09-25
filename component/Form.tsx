@@ -9,8 +9,10 @@ interface TaskStyle {
 }
 interface FormStyle {
   openThemeModal: () => void;
+  user: () => void;
+  showName: () => string;
 } //variable declaration
-export const Form = ({ openThemeModal }: FormStyle) => {
+export const Form = ({ openThemeModal, user, showName }: FormStyle) => {
   const [task, setTask] = useState<TaskStyle[]>([]);
   const [taskInput, setTaskInput] = useState("");
   //Section for adding task
@@ -51,10 +53,25 @@ export const Form = ({ openThemeModal }: FormStyle) => {
         onSubmit={addTask}
       >
         <section className="w-full min-h-fit bg-case flex flex-1 flex-col p-2 justify-start items-center rounded-2xl shadow-xl">
+          {/*
+        
+        
+        
+        
+        
+        gu*/}
+          <Avatar user={user} showName={showName} />
+          {/*
+        
+        
+        
+        
+        
+        gu*/}
           <section className=" relative items-center w-full cursor-pointer justify-center p-2 flex">
             <div className="items-center w-full p-2 flex absolute left-4">
               <span
-                className="  select-none !text-4xl material-symbols-rounded"
+                className="select-none !text-4xl material-symbols-rounded active:scale-95 active:ring active:ring-4 active:ring-card/80 hover:scale-110"
                 onClick={openThemeModal}
               >
                 menu
@@ -67,8 +84,6 @@ export const Form = ({ openThemeModal }: FormStyle) => {
               <span>Task Flow Pro</span>
             </div>
           </section>
-          <Avatar />
-
           <div className="input-Div gap-2 flex justify-between p-2 items-center w-full">
             <input
               className="text-text flex-1 min-w-0 p-2 bg-card/50 outline-border/50 rounded-md ring-2 ring-border"
@@ -79,16 +94,20 @@ export const Form = ({ openThemeModal }: FormStyle) => {
               autoFocus
             />
 
-            <Buttons type="submit" className="shrink-0" text="Add Task" />
+            <Buttons
+              type="submit"
+              className="shrink-0 font-bold"
+              text="Add Task"
+            />
           </div>
-          <div className="w-full p-4 bg-background/80">
-            <ul className="flex flex-col justify-center items-center gap-4">
+          <div className="w-full p-4 bg-background/80 rounded-xl shadow-sm shadow-card/7 bg-backdrop-blur">
+            <ul className="flex flex-col justify-center items-center gap-4 ">
               {task.length === 0 && (
-                <div className="flex flex-col justify-center items-center gap-2 p-4 w-full text-center text-text font-black">
-                  <p className="block p-4 text-medium text-xl">
+                <div className="flex flex-col justify-center items-center gap-2 p-4 w-full text-center text-text leading-tight tracking-tight ">
+                  <p className="block p-4 text-medium text-2xl font-bold">
                     Looks empty in here
                   </p>
-                  <p className="block p-4 text-medium text-xl">
+                  <p className="block p-4 text-medium text-xl font-medium">
                     Add a task to begin
                   </p>
                 </div>
@@ -108,14 +127,14 @@ export const Form = ({ openThemeModal }: FormStyle) => {
                     </p>
 
                     <Buttons
-                      className="material-symbols-rounded p-0 shadow-none"
+                      className="material-symbols-rounded p-0 shadow-none bg-red-400 !text-slate-800"
                       text="delete"
                       onClick={() => {
                         deleteTask(task.id);
                       }}
                     />
                     <Buttons
-                      className="material-symbols-rounded p-0 shadow-none"
+                      className="material-symbols-rounded p-0 shadow-none !bg-blue-400 !text-slate-800"
                       text="done"
                     />
                   </li>

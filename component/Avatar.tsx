@@ -1,32 +1,23 @@
-import { useState } from "react";
-export const Avatar = () => {
+interface AvatarProps {
+  user: () => void;
+  showName: () => string;
+}
+export const Avatar = ({ user, showName }: AvatarProps) => {
   //const [openAvatar, setopenAvatar] = useState(false);
-  const [userName, setUserName] = useState("Guest");
-  const user = () => {
-    const prompte = window.prompt("Who is logging in today?");
-    prompte ? setUserName(prompte) : window.alert("Add a username");
-  };
-  const showName = () => {
-    if (userName !== "Guest") {
-      return `Welcome back ${userName}`;
-    }
-    return `Currently logged in as ${userName}`;
-  };
 
   return (
     <>
-      <section
-        onClick={user}
-        className="items-center w-full cursor-pointer justify-center p-2 flex text-text"
-      >
-        <div className=" Avatar-setting bg-card items-center p-2 flex">
-          <span className="select-none !text-4xl material-symbols-rounded">
-            menu
+      <section className="items-center w-full cursor-pointer justify-center p-2 flex text-text">
+        <section className="bg-card p-2 rounded-full shrink-0 hover:scale-110 active:scale-95 active:ring-4 active:ring-card/80 transition-transform duration-500 ease-in-out border">
+          <span className="material-symbols-rounded rounded-full p-8 bg-red-200 block">
+            person
           </span>
-        </div>
+        </section>
+
         <div
+          onClick={user}
           className="
-              px-4 py-1 !font-bold !text-3xl !text-center w-full"
+            leading-tight tracking-tight px-4 py-1 !font-medium !text-2xl !text-left w-full"
         >
           <span>{showName()}</span>
         </div>

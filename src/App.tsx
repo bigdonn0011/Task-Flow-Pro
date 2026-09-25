@@ -25,6 +25,18 @@ function App() {
     }
     return "light";
   });
+  //controls username switching
+  const [userName, setUserName] = useState("Guest");
+  const user = () => {
+    const prompte = window.prompt("Who is logging in today?");
+    prompte ? setUserName(prompte) : window.alert("Add a username");
+  };
+  const showName = () => {
+    if (userName !== "Guest") {
+      return `Welcome back ${userName}`;
+    }
+    return `Currently logged in as ${userName}`;
+  };
 
   //controls theme switch
   useEffect(() => {
@@ -40,9 +52,10 @@ function App() {
 
   return (
     <>
-      <section className="container min-h-screen min-w-screen bg-background flex flex-col gap-2 items-center justify-center">
-        <Form openThemeModal={openThemeModal} />
+      <section className="font-['Inter'] container min-h-screen min-w-screen bg-background flex flex-col gap-2 items-center justify-center">
+        <Form openThemeModal={openThemeModal} user={user} showName={showName} />
         <Themes
+          user={user}
           openThemeModal={openThemeModal}
           openTheme={openTheme}
           setTheme={setTheme}

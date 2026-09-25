@@ -1,8 +1,10 @@
 import type { Theme } from "../src/App";
 import { Buttons } from "../component/Buttons";
 import { Li } from "../component/Li";
+
 interface ThemeStyle {
   openThemeModal: () => void;
+  user: () => void;
   setting: boolean;
   openTheme: boolean;
   settingModal: () => void;
@@ -10,16 +12,23 @@ interface ThemeStyle {
 }
 export const Themes = ({
   setTheme,
+  user,
   openTheme,
   openThemeModal,
   setting,
   settingModal,
 }: ThemeStyle) => {
+  const showNameModal = () => {
+    openThemeModal();
+    setTimeout(() => {
+      user();
+    }, 100);
+  };
   return (
     <>
       {!setting
         ? openTheme && (
-            <section className="inset-0 fixed backdrop-blur-md z-10 flex flex-col justify-start items-center p-4 h-screen w-screen gap-4">
+            <section className=" no-select inset-0 fixed backdrop-blur-md z-10 flex flex-col justify-start items-center p-4 h-screen w-screen gap-4">
               <div className="w-full max-w-2xl relative flex flex-col justify-start items-center gap-4">
                 <div className="w-full relative flex justify-start items-center">
                   <Buttons
@@ -41,20 +50,24 @@ export const Themes = ({
 
                 <Li className="bg-transparent" text="Login" />
 
-                <Li className="bg-transparent" text="Change Avatar" />
+                <Li
+                  onClick={showNameModal}
+                  className="bg-transparent no-select"
+                  text="Change Username"
+                />
               </div>
             </section>
           )
         : openTheme && (
-            <section className="inset-0 fixed backdrop-blur-md z-10 flex flex-col justify-start items-center p-4 h-screen w-screen gap-4">
-              <div className="w-full max-w-2xl relative flex flex-col justify-start items-center gap-4">
-                <div className="  w-full relative flex justify-start items-center ">
+            <section className=" no-select inset-0 fixed backdrop-blur-md z-10 flex flex-col justify-start items-center p-4 h-screen w-screen gap-4">
+              <div className="no-select w-full max-w-2xl relative flex flex-col justify-start items-center gap-4">
+                <div className="no-select   w-full relative flex justify-start items-center ">
                   <Buttons
                     className="material-symbols-rounded"
                     onClick={settingModal}
                     text="arrow_back"
                   />
-                  <span className=" w-full px-4 py-1 block font-bold !text-2xl text-center">
+                  <span className="no-select w-full px-4 py-1 block font-bold !text-2xl text-center">
                     Choose Theme
                   </span>
                 </div>
