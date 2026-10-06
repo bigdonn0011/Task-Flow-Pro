@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <section className="font-['Inter'] container min-h-screen min-w-screen bg-background flex flex-col gap-2 items-center justify-center">
+      <section className="font-sans container min-h-screen min-w-screen bg-background flex flex-col gap-2 items-center justify-center">
         <Form openThemeModal={openThemeModal} user={user} showName={showName} />
         <Themes
           user={user}
