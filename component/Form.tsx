@@ -37,6 +37,14 @@ export const Form = ({ openThemeModal, user, showName }: FormStyle) => {
       setTask(task.filter((item) => item.id !== idToDelete));
     }
   };
+  // clear function
+
+  const clearTask = (idToClear: number) => {
+    let prompt = window.confirm("Completed this task ?");
+    if (prompt) {
+      setTask(task.filter((item) => item.id !== idToClear));
+    }
+  };
   //checktask
 
   //task function
@@ -100,7 +108,7 @@ export const Form = ({ openThemeModal, user, showName }: FormStyle) => {
               text="Add Task"
             />
           </div>
-          <div className="w-full p-4 bg-background/80 rounded-xl shadow-sm shadow-card/7 bg-backdrop-blur">
+          <div className="w-full p-4 bg-background/80 rounded-xl shadow-md shadow-card/7 bg-backdrop-blur">
             <ul className="flex flex-col justify-center items-center gap-4 ">
               {task.length === 0 && (
                 <div className="flex flex-col justify-center items-center gap-2 p-4 w-full text-center text-text leading-tight tracking-tight ">
@@ -136,6 +144,9 @@ export const Form = ({ openThemeModal, user, showName }: FormStyle) => {
                     <Buttons
                       className="material-symbols-rounded p-0 shadow-none !bg-blue-400 !text-slate-800"
                       text="done"
+                      onClick={() => {
+                        clearTask(task.id);
+                      }}
                     />
                   </li>
                 );
