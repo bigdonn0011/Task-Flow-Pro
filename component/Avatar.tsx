@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { Buttons } from "../component/Buttons";
 
 interface AvatarProps {
   user: () => void;
@@ -7,9 +6,9 @@ interface AvatarProps {
 }
 export const Avatar = ({ user, showName }: AvatarProps) => {
   //const [openAvatar, setopenAvatar] = useState(false);
-  const fileRef = useRef(null);
+  const fileRef = useRef<HTMLInputElement>(null);
   const filePickerRef = () => {
-    fileRef.current?.click();
+    fileRef.current && fileRef.current.click();
   };
   return (
     <>
