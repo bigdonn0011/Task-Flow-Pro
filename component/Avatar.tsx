@@ -29,7 +29,7 @@ export const Avatar = ({ user, showName }: AvatarProps) => {
         >
           <span>{showName()}</span>
         </div>
-        <input type="file" ref={fileRef} className="hidden" />
+        <input type="file" accept="image/*" ref={fileRef} className="hidden" />
       </section>
     </>
   );
