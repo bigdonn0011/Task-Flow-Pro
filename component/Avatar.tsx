@@ -1,14 +1,23 @@
+import { useRef } from "react";
+import { Buttons } from "../component/Buttons";
+
 interface AvatarProps {
   user: () => void;
   showName: () => string;
 }
 export const Avatar = ({ user, showName }: AvatarProps) => {
   //const [openAvatar, setopenAvatar] = useState(false);
-
+  const fileRef = useRef(null);
+  const filePickerRef = () => {
+    fileRef.current?.click();
+  };
   return (
     <>
       <section className="items-center w-full cursor-pointer justify-center p-2 flex text-text">
-        <section className="bg-card p-2 rounded-full shrink-0 hover:scale-110 active:scale-95 active:ring-4 active:ring-card/80 transition-transform duration-500 ease-in-out border">
+        <section
+          className="bg-card p-2 rounded-full shrink-0 hover:scale-110 active:scale-95 active:ring-4 active:ring-card/80 transition-transform duration-500 ease-in-out border"
+          onClick={filePickerRef}
+        >
           <span className="material-symbols-rounded rounded-full p-8 bg-red-200 block">
             person
           </span>
@@ -21,6 +30,7 @@ export const Avatar = ({ user, showName }: AvatarProps) => {
         >
           <span>{showName()}</span>
         </div>
+        <input type="file" ref={fileRef} className="hidden" />
       </section>
     </>
   );
